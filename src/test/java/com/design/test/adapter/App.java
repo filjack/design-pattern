@@ -1,4 +1,4 @@
-package com.design.adapter;
+package com.design.test.adapter;
 
 import java.io.IOException;
 

@@ -1,12 +1,10 @@
-package com.design.adapter;
+package com.design.test.adapter;
+
+import com.design.test.adapter.FileIO;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Properties;
 
 /**

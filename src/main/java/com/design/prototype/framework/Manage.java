@@ -17,7 +17,7 @@ public class Manage {
 
     public Product create(String name) {
         Product product = showcase.get(name);
-        return product.copy();
+        return product.createClone();
     }
 
 }

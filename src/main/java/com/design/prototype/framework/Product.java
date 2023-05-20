@@ -4,10 +4,18 @@ package com.design.prototype.framework;
  * @author xpf
  * @since 2023/5/20
  */
-public interface Product extends Cloneable {
+public abstract class Product implements Cloneable {
 
-    void use(String name);
+    public abstract void use(String name);
 
-    Product createClone();
+    public final Product createClone() {
+        Product product = null;
+        try {
+            product = (Product) clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return product;
+    }
 
 }

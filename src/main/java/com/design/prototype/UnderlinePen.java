@@ -6,7 +6,7 @@ import com.design.prototype.framework.Product;
  * @author xpf
  * @since 2023/5/20
  */
-public class UnderlinePen implements Product {
+public class UnderlinePen extends Product {
 
     private char ulChar;
 
@@ -24,14 +24,4 @@ public class UnderlinePen implements Product {
         System.out.println();
     }
 
-    @Override
-    public Product createClone() {
-        Product product = null;
-        try {
-            product = (Product) clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return product;
-    }
 }

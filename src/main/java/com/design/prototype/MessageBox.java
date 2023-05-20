@@ -6,7 +6,7 @@ import com.design.prototype.framework.Product;
  * @author xpf
  * @since 2023/5/20
  */
-public class MessageBox implements Product {
+public class MessageBox extends Product {
 
     private char decochar;
 
@@ -27,16 +27,5 @@ public class MessageBox implements Product {
             System.out.print(decochar);
         }
         System.out.println();
-    }
-
-    @Override
-    public Product createClone() {
-        Product product = null;
-        try {
-            product = (Product) clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return product;
     }
 }

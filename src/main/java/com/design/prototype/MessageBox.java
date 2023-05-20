@@ -1,12 +1,13 @@
 package com.design.prototype;
 
+import com.design.prototype.framework.ConcreteProduct;
 import com.design.prototype.framework.Product;
 
 /**
  * @author xpf
  * @since 2023/5/20
  */
-public class MessageBox extends Product {
+public class MessageBox extends ConcreteProduct implements Product {
 
     private char decochar;
 
@@ -28,4 +29,5 @@ public class MessageBox extends Product {
         }
         System.out.println();
     }
+
 }

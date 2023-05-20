@@ -1,12 +1,13 @@
 package com.design.prototype;
 
+import com.design.prototype.framework.ConcreteProduct;
 import com.design.prototype.framework.Product;
 
 /**
  * @author xpf
  * @since 2023/5/20
  */
-public class UnderlinePen extends Product {
+public class UnderlinePen extends ConcreteProduct implements Product {
 
     private char ulChar;
 
@@ -23,5 +24,6 @@ public class UnderlinePen extends Product {
         }
         System.out.println();
     }
+
 
 }

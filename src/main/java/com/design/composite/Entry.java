@@ -6,6 +6,8 @@ package com.design.composite;
  */
 public abstract class Entry {
 
+    protected Entry parent;
+
     public abstract String getName();
 
     public abstract int getSize();
@@ -19,6 +21,16 @@ public abstract class Entry {
     }
 
     public abstract void printList(String prefix);
+
+    public String getFullName() {
+        StringBuilder builder = new StringBuilder();
+        Entry entry = this;
+        do {
+            builder.insert(0, "/" + entry.getName());
+            entry = entry.parent;
+        } while (entry != null);
+        return builder.toString();
+    }
 
     @Override
     public String toString() {

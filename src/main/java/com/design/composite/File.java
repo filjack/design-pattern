@@ -15,7 +15,6 @@ public class File extends Entry {
     }
 
     @Override
-
     public String getName() {
         return name;
     }

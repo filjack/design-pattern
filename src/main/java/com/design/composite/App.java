@@ -32,14 +32,26 @@ public class App {
         usrDir.add(hanakoDir);
         usrDir.add(tomuraDir);
 
-        yukiDir.add(new File("diary.html", 100));
-        yukiDir.add(new File("Composite.java", 200));
+        File diaryFile = new File("diary.html", 100);
+        File compositeFile = new File("Composite.java", 200);
 
-        hanakoDir.add(new File("memo.tex", 200));
+        yukiDir.add(diaryFile);
+        yukiDir.add(compositeFile);
 
-        tomuraDir.add(new File("game.doc", 400));
-        tomuraDir.add(new File("iunk.mail", 500));
+        File memoFile = new File("memo.tex", 200);
+
+        hanakoDir.add(memoFile);
+
+        File gameFile = new File("game.doc", 400);
+        File iunkFile = new File("iunk.mail", 500);
+
+        tomuraDir.add(gameFile);
+        tomuraDir.add(iunkFile);
         rootDir.printList();
+
+        System.out.println("");
+        System.out.println("game path : " + gameFile.getFullName());
+        System.out.println("iunk path : " + iunkFile.getFullName());
 
     }
 }

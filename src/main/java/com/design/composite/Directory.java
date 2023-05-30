@@ -20,6 +20,7 @@ public class Directory extends Entry {
 
     @Override
     public Entry add(Entry entry) {
+        entry.parent = this;
         directory.add(entry);
         return this;
     }

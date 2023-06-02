@@ -1,5 +1,7 @@
 package com.design.visitor;
 
+import java.util.Iterator;
+
 /**
  * @author xpf
  * @since 2023/6/2
@@ -32,9 +34,20 @@ public class Main {
             yuki.add(new File("diary.html", 100));
             yuki.add(new File("Composite.java", 200));
             hanako.add(new File("memo.tex", 300));
+            hanako.add(new File("index.html", 300));
             tomura.add(new File("game.doc", 400));
             tomura.add(new File("junk.mail", 500));
             rootDir.accept(new ListVisitor());
+
+            System.out.println("");
+            System.out.println("find special files...");
+            FileFindVisitor visitor = new FileFindVisitor(".html");
+            rootDir.accept(visitor);
+            Iterator iterator = visitor.getFoundFiles();
+            while (iterator.hasNext()) {
+                Entry entry = (Entry) iterator.next();
+                System.out.println(entry.toString());
+            }
         } catch (FileTreatmentException e) {
             e.printStackTrace();
         }

@@ -31,7 +31,7 @@ public class Directory extends Entry {
     public int getSize() {
         int size = 0;
         Iterator<Entry> iterator = dir.iterator();
-        while (iterator().hasNext()) {
+        while (iterator.hasNext()) {
             Entry entry = iterator.next();
             size+= entry.getSize();
         }

@@ -48,6 +48,13 @@ public class Main {
                 Entry entry = (Entry) iterator.next();
                 System.out.println(entry.toString());
             }
+
+            System.out.println("");
+            System.out.println("get size...");
+            SizeVisitor sizeVisitor = new SizeVisitor();
+            rootDir.accept(sizeVisitor);
+            System.out.println("visitor result: " + sizeVisitor.getSize());
+            System.out.println("getSize method result: " + rootDir.getSize());
         } catch (FileTreatmentException e) {
             e.printStackTrace();
         }

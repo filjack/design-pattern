@@ -24,12 +24,16 @@ public abstract class Support {
     }
 
     public final void support(Trouble trouble) {
-        if (resolve(trouble)) {
-            done(trouble);
-        } else if (next != null) {
-            next.support(trouble);
-        } else {
-            fail(trouble);
+        Support current = this;
+        while (current != null) {
+            if (this.resolve(trouble)) {
+                done(trouble);
+                break;
+            } else if (current.next == null) {
+                fail(trouble);
+                break;
+            }
+            current = current.next;
         }
     }
 

@@ -1,5 +1,6 @@
 package com.design.memento.gamer;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,9 @@ import java.util.List;
  * @author xpf
  * @since 2023/6/5
  */
-public class Memento {
+public class Memento implements Serializable {
+
+    private static final long serialVersionUID = -535055623306902255L;
     /**
      * 金钱
      */

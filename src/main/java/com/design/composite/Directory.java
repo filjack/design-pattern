@@ -10,8 +10,14 @@ import java.util.List;
  */
 public class Directory extends Entry {
 
+    /**
+     * 文件夹名字
+     */
     private String name;
 
+    /**
+     * 包含内容
+     */
     private List<Entry> directory = new ArrayList<>();
 
     public Directory(String name) {

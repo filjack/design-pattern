@@ -1,6 +1,8 @@
 package com.design.decorator;
 
 /**
+ * 具体的装饰物
+ *
  * @author xpf
  * @since 2023/5/31
  */

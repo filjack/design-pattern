@@ -6,6 +6,12 @@ package com.design.factory.framework;
  */
 public abstract class Factory {
 
+    /**
+     * 定义生成产品的流程（工厂的流水线）
+     *
+     * @param owner
+     * @return
+     */
     public final Product create(String owner) {
         Product p = createProduct(owner);
         registerProduct(p);

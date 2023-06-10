@@ -7,13 +7,15 @@ package com.design.proxy;
 public class PrintProxy implements Printable {
 
     private String name;
-    private Printer real;
+    private Printable real;
+    private String className;
 
     public PrintProxy() {
     }
 
-    public PrintProxy(String name) {
+    public PrintProxy(String name, String className) {
         this.name = name;
+        this.className = className;
     }
 
     @Override
@@ -37,7 +39,12 @@ public class PrintProxy implements Printable {
 
     private synchronized void realize() {
         if (real == null) {
-            real = new Printer(name);
+            try {
+                real = (Printable) Class.forName(className).newInstance();
+                real.setPrinterName(name);
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

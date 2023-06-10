@@ -6,7 +6,7 @@ package com.design.proxy;
  */
 public class Main {
     public static void main(String[] args) {
-        Printable p = new PrintProxy("Alice");
+        Printable p = new PrintProxy("Alice", "com.design.proxy.Printer");
         System.out.println("现在的名字是" + p.getPrintName() + "。");
         p.setPrinterName("Bob");
         System.out.println("现在的名字是" + p.getPrintName() + "。");
